@@ -108,7 +108,7 @@ input,
 pre code,
 textarea,
 *[text] {
-  cursor: url("https://github.com/Hri2/hri2.github.io/blob/main/text.cur"), text;
+  cursor: url(""), text;
 }
 .fancybox-container .fancybox-stage {
   cursor: url(""), zoom-out !important;
@@ -1441,7 +1441,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.4;
-  cursor: url("https://github.com/Hri2/hri2.github.io/blob/main/text.cur"), text;
+  cursor: url(""), text;
   color: #273849;
 }
 .post-detail h1:focus,
