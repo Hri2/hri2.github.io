@@ -108,7 +108,7 @@ input,
 pre code,
 textarea,
 *[text] {
-  cursor: url(""), text;
+  cursor: url("https://github.com/Hri2/hri2.github.io/blob/main/text.cur"), text;
 }
 .fancybox-container .fancybox-stage {
   cursor: url(""), zoom-out !important;
@@ -1168,9 +1168,8 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   justify-content: space-between;
 }
 .main-content {
-  width: 65%;
-  margin-right: 10px;
-  margin-left: calc(35% - 355px);
+  width: 75%;
+  margin: 0 auto;
   margin-top: 10px;
   transition: width 0.3s;
 }
@@ -1442,7 +1441,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.4;
-  cursor: url(""), text;
+  cursor: url("https://github.com/Hri2/hri2.github.io/blob/main/text.cur"), text;
   color: #273849;
 }
 .post-detail h1:focus,
