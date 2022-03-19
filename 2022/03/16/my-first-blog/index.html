@@ -378,6 +378,21 @@
         
  <!-- prismjs 代码高亮 -->
  
+    
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -576,8 +591,9 @@
 
   <div id="myComment">
     
-      <div id="gitment-container"></div>
-
+      <section id="waline-box">
+  <div id="waline-comment"></div>
+</section>
     
   </div>
 
@@ -906,20 +922,6 @@
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <!-- 背景彩带 -->
@@ -1257,68 +1259,33 @@
 <!-- 评论所需js -->
 
   
-    <script type="text/javascript">
-  var utteranceCommon = {};
-
-  function check_utterance() {
-    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
-    if (isDark) {
-      utteranceCommon.Theme = 'github-dark';
-    } else {
-      utteranceCommon.Theme = 'github-light';
+    <script src="/js/waline/waline.min.js"></script>
+<script type="text/javascript">
+  comment_el = '#waline-comment';
+  var waline;
+  loadWaline = function () {
+    if (!$(comment_el).length) {
+      return;
     }
+    var walineEmoji = 'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo';
+    walineEmoji = walineEmoji.split(',')
 
-    return document.getElementById("gitment-container");
-  }
-  comment_el = '#gitment-container';
-  load_utterance = function () {
-    if ($(comment_el).length) {
-      // 匿名函数，防止污染全局变量
-      const HEAD = check_utterance();
-
-      var utterances = document.createElement('script');
-      utterances.type = 'text/javascript';
-      utterances.async = true;
-      utterances.setAttribute('issue-term', 'pathname')
-      utterances.setAttribute('theme', utteranceCommon.Theme)
-      utterances.setAttribute('repo', '')
-      utterances.crossorigin = 'anonymous';
-      utterances.src = 'https://utteranc.es/client.js';
-      // content 是要插入评论的地方
-      document.getElementById('gitment-container').appendChild(utterances);
-
-    }
-  }
-
-  function dark_utterance() {
-    const HEAD = check_utterance();
-    if (!HEAD) return;
-    const message = {
-      type: 'set-theme',
-      theme: utteranceCommon.Theme
-    };
-    const utteranceIframe = document.querySelector('iframe');
-    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
-  }
-
-  $(document).ready(load_utterance);
-  document.addEventListener('pjax:complete', function () {
-    load_utterance();
-  });
-
-  $('.dark').click(function () {
-    setTimeout(() => {
-      dark_utterance();
+    waline = Waline({
+      el: comment_el,
+      serverURL: 'https://waline-server-mxjdio9hd-hri2.vercel.app/',
+      lang: 'zh-CN',
+      vistor: '',
+      emoji: walineEmoji,
+      login: 'enable',
+      pageSize: '10',
+      copyright: true
     });
-  })
-
-</script>
-
-<style>
-  .utterances {
-    max-width: inherit !important;
   }
-</style>
+  $(document).ready(loadWaline);
+  document.addEventListener('pjax:complete', function () {
+    loadWaline();
+  });
+</script>
   
 
 
