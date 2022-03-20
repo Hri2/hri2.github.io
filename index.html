@@ -1065,10 +1065,14 @@
         :data="listData"
         :class-option="classOption"
         class="warp"
-        style="height: 0px"
+        style="height: 30px"
       >
         <ul class="index-notice-content__ul">
           
+          
+            <li>
+              
+            </li>
            
         </ul>
       </vue-seamless-scroll>
@@ -1083,7 +1087,7 @@
 <script>
   var seamless = JSON.parse('false');
   seamless = seamless ? 0 : 30;
-  var listData = '' || '';
+  var listData = '[object Object]' || '';
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',
@@ -1112,6 +1116,17 @@
     <!-- 首页文章置顶 -->
     
 
+
+<div class="topArticle reveal">
+	<h3><i class="fas fa-thumbs-o-up" aria-hidden="true"></i>Recommend Articles</h3>
+	<div class="articles">
+		
+			
+		
+			
+		
+	</div>
+</div>
 
 
     <div class="bg-floor" id="home-bg-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
@@ -1145,7 +1160,7 @@
           <div class="post-img-mobile">
             <a href="/20220320/" style="background-size: cover; 
               background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/img/wangwang.jpg" class="lazyload placeholder" data-srcset="/img/wangwang.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              <img class="lazyload lazyload placeholder" src="/img/3540d76bba8b8ea0d1c6376823220d21a02c4b98.jpg" class="lazyload placeholder" data-srcset="/img/3540d76bba8b8ea0d1c6376823220d21a02c4b98.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
             </a>
           </div>
           <div class="post-content">
@@ -1165,7 +1180,7 @@
       <div class="post-img">
         <a href="/20220320/" style="background-size: cover; 
           background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/img/wangwang.jpg" class="lazyload placeholder" data-srcset="/img/wangwang.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+          <img class="lazyload lazyload placeholder" src="/img/3540d76bba8b8ea0d1c6376823220d21a02c4b98.jpg" class="lazyload placeholder" data-srcset="/img/3540d76bba8b8ea0d1c6376823220d21a02c4b98.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
         </a>
       </div>
     </article>
@@ -1297,7 +1312,7 @@
             <div class="post-img-box">
               <a href="/20220320/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/img/wangwang.jpg" class="lazyload placeholder" data-srcset="/img/wangwang.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/img/3540d76bba8b8ea0d1c6376823220d21a02c4b98.jpg" class="lazyload placeholder" data-srcset="/img/3540d76bba8b8ea0d1c6376823220d21a02c4b98.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
               </a>
             </div>
             <div class="post-date-title">
